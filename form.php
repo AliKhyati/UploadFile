@@ -35,7 +35,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 if (empty($errors)) {
     $newName= $uploadDir . uniqid() . basename($_FILES['avatar']['name']);
 
-    var_dump($newName);
 
 move_uploaded_file($_FILES['avatar']['tmp_name'], $newName);
 
@@ -61,7 +60,7 @@ echo 'image uploadé';
     <input type="file" name="avatar" id="imageUpload" />
     <button name="send">Send</button>
     </form>
-    <img src="<?= $newName; ?>">
+    <img src="<?= $newName ?>">
 
 </body>
 </html>
